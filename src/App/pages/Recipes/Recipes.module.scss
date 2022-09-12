@@ -1,0 +1,55 @@
+@use 'styles/variables' as v;
+@use 'styles/mixins' as m;
+
+.recipes {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  @include m.media-max1100 {
+    max-width: 767px;
+  }
+  @include m.media-max767 {
+    max-width: 500px;
+    padding: 24px 3px;
+  }
+}
+
+.recipes__header {
+  width: 100%;
+  padding: 0 8px;
+  margin: 0 0 2.5rem;
+  display: flex;
+  gap: v.$margin;
+
+  @include m.media-max767 {
+    flex-direction: column;
+    align-items: end;
+    .recipes__search {
+      width: 100%;
+    }
+  }
+}
+
+.recipes__search {
+  flex-grow: 1;
+  position: relative;
+
+  input {
+    width: 100%;
+  }
+}
+
+.recipes__searchBtn {
+  height: 100%;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #F5F5F500;
+}
+
+.multiDropdownWrapper {
+  width: 176px;
+  @include m.text-area(60px);
+  position: relative;
+}
