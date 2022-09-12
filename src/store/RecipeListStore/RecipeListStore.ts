@@ -1,3 +1,4 @@
+import { action, computed, IReactionDisposer, makeObservable, observable, reaction, runInAction } from 'mobx';
 import { Meta } from 'projectTypes/enums';
 import { RecipeItemModel } from 'store/models/Food/recipeItem';
 import { normalizeRecipesData, RecipesDataApi } from 'store/models/Food/recipesData';
@@ -6,7 +7,6 @@ import rootStore from 'store/RootStore';
 import { numberOfItems } from 'utils/numberOfItems';
 import { ILocalStore } from 'utils/useLocalStore';
 import { getTypes } from 'utils/utils';
-import { action, computed, IReactionDisposer, makeObservable, observable, reaction, runInAction } from 'mobx';
 
 import { IRecipeListStore } from './types';
 
@@ -15,7 +15,7 @@ type PrivateFields = '_list' | '_meta' | '_hasMore';
 export default class RecipeListStore implements IRecipeListStore, ILocalStore {
   private _list: RecipeItemModel[] = [];
   private _meta: Meta = Meta.initial;
-  private _hasMore: boolean = true;
+  private _hasMore = true;
   private _multiDropdownStore: MultiDropdownStore = new MultiDropdownStore();
 
   constructor() {

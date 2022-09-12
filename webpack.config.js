@@ -50,7 +50,7 @@ module.exports = {
     isProd && new MiniCssExtractPlugin({
       filename: '[main]-[hash].css'
     }),
-    new ForkTsCheckerWebpackPlugin,
+    new ForkTsCheckerWebpackPlugin(),
   ].filter(Boolean),
   module: {
     rules: [

@@ -40,5 +40,7 @@ export type ApiResponse<SuccessT, ErrorT> =
 export interface IApiStore {
   readonly baseUrl: string;
 
-  request<SuccessT, ErrorT = any, ReqT = {}>(params: RequestParams<ReqT>): Promise<ApiResponse<SuccessT, ErrorT>>;
+  request<SuccessT, ErrorT = Error, ReqT = Record<string, unknown>>(
+    params: RequestParams<ReqT>
+  ): Promise<ApiResponse<SuccessT, ErrorT>>;
 }

@@ -4,12 +4,12 @@ import Button from 'components/Button';
 import Likes from 'components/Likes';
 import ReturnIcon from 'components/ReturnIcon';
 import WithLoader from 'components/WithLoader';
+import { observer } from 'mobx-react-lite';
 import { LoaderSize } from 'projectTypes/enums';
+import { Link, useParams } from 'react-router-dom';
 import DetailRecipeStore from 'store/DetailRecipeStore';
 import { IIngredientApi } from 'store/models/Food/ingridient';
 import { useLocalStore } from 'utils/useLocalStore';
-import { observer } from 'mobx-react-lite';
-import { Link, useParams } from 'react-router-dom';
 
 import styles from './DetailRecipe.module.scss';
 
